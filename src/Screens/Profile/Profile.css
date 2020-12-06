@@ -1,0 +1,29 @@
+
+.profile-container{
+    display: flex;
+}
+.header-background{
+    background-color: #94DFD8;
+    height: 50vh;
+    width: 100%;
+
+}
+.border-user-details{
+    height: 40vh;
+    border-radius: 10%;
+    border: 1px solid #ffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 210px;
+    background-color:white ;
+}
+.user-img{
+    width: 80%;
+    max-width: 150px;
+    margin-top: -50px;
+    border-radius: 100%;
+
+}
+
+.profile-userDetails{
+    font-size: 15px;
+}

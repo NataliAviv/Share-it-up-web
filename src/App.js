@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React,{useEffect} from 'react';
 import './App.css';
-
+import { login } from './ServerApi';
+import RouterApp from './RouterApp';
 function App() {
+
+useEffect(() => {
+  let user= {"user":{
+    "email":"natali.aviv162@gmail.com",
+    "password":"12321"
+    }
+    }
+login(user).then((res)=>console.log(res))
+ 
+}, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <RouterApp/>
     </div>
   );
 }
