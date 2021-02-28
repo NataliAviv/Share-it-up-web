@@ -1,22 +1,21 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { login } from './ServerApi';
-import RouterApp from './RouterApp';
+import Routing from './routes/Routing';
 function App() {
-
-useEffect(() => {
-  let user= {"user":{
-    "email":"natali.aviv162@gmail.com",
-    "password":"12321"
-    }
-    }
-login(user).then((res)=>console.log(res))
- 
-}, [])
+  useEffect(() => {
+    let user = {
+      user: {
+        email: 'natali.aviv162@gmail.com',
+        password: '12321'
+      }
+    };
+    login(user).then(res => console.log(res));
+  }, []);
 
   return (
-    <div className="App">
-    <RouterApp/>
+    <div className='App'>
+      <Routing />
     </div>
   );
 }

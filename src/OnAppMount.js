@@ -1,14 +1,18 @@
+import {
+  getFriendsRequest,
+  getUserRequest,
+  getGroupsRequest
+} from './ServerApi';
+import { setUserDb } from './dataBase/UserDetailsDb';
+import { setFriendsDb } from './dataBase/FriendsDetailsDb';
+import { setGroupDb } from './dataBase/GroupDetailsDb';
 
-import {getFriendsRequest, getUserDetails} from './ServerApi';
-import { setUserDb } from './Components/DataBase/UserDetailsDb';
-import { setFriendsDb } from './Components/DataBase/FriendsDetailsDb';
+export async function appAmount() {
+  const groups = await getGroupsRequest();
+  const friends = await getFriendsRequest();
+  const user = await getUserRequest();
+  setUserDb(user.user[0]);
 
-export async function appAmount(){
-    const friends=await getFriendsRequest();
-    const user=await getUserDetails();
-    setUserDb(user.user[0]);
-    console.log(user.user[0]);
-
-    setFriendsDb(friends);
-    
+  setFriendsDb(friends);
+  setGroupDb(groups.groups);
 }
